@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/style.css">
+		<style type="text/css">
+			img{
+				width: 500px;
+				float: left;
+			}
+
+			section{
+				width: 100%;
+				float: left;
+				border: 1px solid blue;
+				margin: 0 0 10px 0;
+			}
+
+			p{
+				margin: 0;
+			}
+
+			footer{
+				clear: both;
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>热锅－强制父元素围住浮动元素的方法之浮动父级元素</h1>
+		<section>
+			<img src="img/hotpot.jpg">
+			<p>
+				图片浮动后，脱离文档流。此段落向上浮动。section元素只包围了p，未包围图片。在给父级元素section设定宽度之后，浮动section，使得父级元素围住浮动元素。
+			</p>
+		</section>
+		<footer>此footer在高度小于图片高度的情况下，footer上浮。如果忘记给footer添加clear属性的话，footer的边框依然能看出上浮的效果。</footer>
+	</body>
+</html>

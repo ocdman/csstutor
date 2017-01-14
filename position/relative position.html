@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/style.css">
+		<style type="text/css">
+			body{
+				background-color: #eeeeee;
+			}
+
+			p{
+				font-size: 20px;
+				background-color: #c3c3c3;
+			}
+
+			p#specialpara{
+				position: relative;
+				top: 25px;
+				left: 30px;
+				background-color: #ffffff;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>相对定位</h1>
+		<p>段落一</p>
+		<p>段落二</p>
+		<p id="specialpara">带id的段落三</p>
+		<p>段落四</p>
+		<p>相对定位的元素，原来在文档流中占据的空间没有动，其它的元素也没有动。只是相对于原来的位置，根据top，left等值进行了相应的挪动。会出现覆盖其它元素的情况，所以相对定位的关键在于，要考虑到元素原来的空间，从而避免被相对定位的元素遮盖住。</p>
+	</body>
+</html>

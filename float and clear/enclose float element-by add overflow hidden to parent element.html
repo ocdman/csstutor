@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/style.css">
+		<style type="text/css">
+			img{
+				width: 500px;
+				float: left;
+			}
+
+			section{
+				border: 1px solid blue;
+				margin: 0 0 10px 0;
+				overflow: hidden;
+			}
+
+			p{
+				margin: 0;
+			}
+
+			footer{
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>搞笑火花4－强制父元素围住浮动元素的方法之添加 overflow:hidden</h1>
+		<section>
+			<img src="img/lin4.jpg">
+			<p>
+				图片浮动后，脱离文档流。此段落向上浮动。section元素只包围了p，未包围图片。通过给section元素添加 overflow:hidden 之后，section元素强制包围了浮动的图片，看上去好像图片没有浮动过。
+			</p>
+			<p>overflow: hidden的初衷是为了防止包含元素被超大内容撑大。同时它也可以迫使父元素强制包围浮动的子元素。缺点是不太直观。</p>
+		</section>
+		<footer>此footer在高度小于图片高度的情况下，footer上浮。</footer>
+	</body>
+</html>

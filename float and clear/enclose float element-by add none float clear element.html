@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/style.css">
+		<style type="text/css">
+			img{
+				width: 500px;
+				float: left;
+			}
+
+			section{
+				border: 1px solid blue;
+				margin: 0 0 10px 0;
+			}
+
+			p{
+				margin: 0;
+			}
+
+			.clear_me{
+				clear: both;
+			}
+
+			.clearfix:after{
+				content: '.';
+				display: block;
+				height: 0;
+				visibility: hidden;
+				clear: both;
+			}
+
+			footer{
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>火花5－强制父元素围住浮动元素的方法之添加非浮动清除元素</h1>
+		<section class="clearfix">
+			<img src="img/men.jpg">
+			<p>
+				图片浮动后，脱离文档流。此段落向上浮动。section元素只包围了p，未包围图片。通过给父元素section的最后添加一个非浮动的子元素div，然后清除该子元素，实现强制父元素围住浮动子元素。原理是由于包含元素一定会包围非浮动子元素，而且清除会让这个子元素位于浮动元素的下方，因此包含元素一定会包含这个子元素以及前面的浮动元素。一共有两种方式可以做到在包含元素最后添加子元素。
+			</p>
+			<p>
+				第一种，在html标记中添加一个子元素，并且给它应用clear属性。由于没有默认的样式，不会引入多余的空间，适合使用div元素。
+			</p>
+			<p>
+				第二种，给父元素添加一个clearfix的伪类，这个类只添加了一个清除的，没有高度的，不可见的包含句点作为非浮动元素。
+			</p>
+			<div class="clear_me"></div>
+		</section>
+		<footer>此footer在高度小于图片高度的情况下，footer上浮。如果忘记给footer添加clear属性的话，footer的边框依然能看出上浮的效果。</footer>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<style type="text/css">
+			div#outer{
+				position: relative;
+				width: 250px;
+				margin: 50px 40px;
+				border-top: 3px solid red;
+			}
+			div#inner{
+				position: absolute;
+				top: 10px;
+				left: 20px;
+				background: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="outer">
+			<div id="inner">
+				代码里给内部div设定了top和left属性，但是内部div没有相对外部div向下移动10px，向右移动20px。原因在于，内外部div默认都是静态定位，它们之间不存在谁是谁的定位上下文这一说。只有将元素的position属性设定为relative，absolute或者fixed，这个元素的top，right，left，bottom才会起效果。
+				在这里，我将内部div元素的position属性设定为absolute，元素的定位上下文直接是body。但是当对外部div元素的position属性设定为relative后，内部div元素的定位上下文就变成了外部div元素了。
+				大家随意感受一下。
+			</div>
+		</div>
+	</body>
+</html>
